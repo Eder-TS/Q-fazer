@@ -7,6 +7,7 @@ Aplicação para lista de tarefas.
 Projeto desenvolvido em Javascript com React + Typescript + Vite. Necessário NodeJS instalado.<br>
 Esta versão da aplicação foi desenvolvida com NodeJS versão 20.12.0, ReactJS versão 19.0.0, ReactDom versão 19.0.0, React Router DOM versão 7.1.0, Typescript versão 5.7.3 e Vite versão 5.4.9.
 Testes realizados nos navegadores Google Chrome versão 127.0.6533.88 e Firefox versão 133.0.3 .<br>
+Após clonar o projeto em sua máquina, executar o comando `npm install` dentro da pasta da aplicação para instalação das dependências.<br>
 Para executar o projeto deve-se usar o comando `npm run dev` na linha de comando (estando dentro da pasta do projeto).
 
 ## **Melhorias com relação a Versão 1**
