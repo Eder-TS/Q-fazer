@@ -7,8 +7,6 @@ import { NavbarButton } from './NavbarButton'
 export const Navbar = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { theme, toggleTheme } = useTheme()
-    const organization = ''
-    const tasks = ''
 
     const actualTab = window.document.location.href.endsWith('/')
 
