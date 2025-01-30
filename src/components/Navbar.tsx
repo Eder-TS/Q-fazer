@@ -30,5 +30,6 @@ export const Navbar = () => {
                 }
             />
         </nav>
+
     )
 }
