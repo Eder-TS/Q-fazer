@@ -6,7 +6,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  // { ignores: ['dist'] },
+  { ignores: ['dist'] },
   {
     extends: [js.configs.recommended, tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -24,6 +24,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'error',
     },
   },
   eslintConfigPrettier
