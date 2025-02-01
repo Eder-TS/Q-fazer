@@ -71,6 +71,8 @@ function Tasks() {
             return todo.done
         })
 
+
+
         const organizations = localStorage.getItem('organizations')
         const actualOrganizationMemory = organization
         if (areAllDone && organizations && actualOrganizationMemory) {
@@ -80,6 +82,18 @@ function Tasks() {
             const updateOrganizations = organizationsObject.map((organization) => {
                 if (organization.id === idThisOrganization) {
                     return { ...organization, done: organization.done = true }
+                }
+                return organization
+            })
+
+            localStorage.setItem('organizations', JSON.stringify(updateOrganizations))
+        } else if (!areAllDone && organizations && actualOrganizationMemory) {
+            const organizationsObject: OrganizationItem[] = JSON.parse(organizations)
+            const thisOrganization = organizationsObject.find((organization) => { return organization.name === actualOrganizationMemory })
+            const idThisOrganization = thisOrganization?.id
+            const updateOrganizations = organizationsObject.map((organization) => {
+                if (organization.id === idThisOrganization) {
+                    return { ...organization, done: organization.done = false }
                 }
                 return organization
             })
