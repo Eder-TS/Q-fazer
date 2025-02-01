@@ -5,6 +5,7 @@ import { useTheme } from '../contexts/ThemeContext'
 import { NavbarButton } from './NavbarButton'
 
 export const Navbar = () => {
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { theme, toggleTheme } = useTheme()
 
@@ -30,6 +31,8 @@ export const Navbar = () => {
                 }
             />
         </nav>
+
+
 
     )
 }
