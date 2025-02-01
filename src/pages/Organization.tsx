@@ -113,7 +113,7 @@ function Organization() {
     return (
         <div className={`app ${theme}`}>
 
-            <Navbar />
+            <Navbar theme={theme} />
 
             <div className={`container ${theme}`}>
 

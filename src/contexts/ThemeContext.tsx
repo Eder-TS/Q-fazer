@@ -21,10 +21,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useTheme = () => {
     const context = useContext(ThemeContext)
 
-    if(!context) {
+    if (!context) {
         throw new Error("useTheme deve ser usado com um ThemeProvider")
     }
 

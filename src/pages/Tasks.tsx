@@ -32,6 +32,7 @@ function Tasks() {
         if (organization) {
             setMemoryTasksKey(`${organization}-tasks`)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const addTask = (): void => {
@@ -126,7 +127,7 @@ function Tasks() {
     return (
         <div className={`app ${theme}`}>
 
-            <Navbar />
+            <Navbar theme={theme} />
 
             <div className={`container ${theme}`}>
 
@@ -164,6 +165,7 @@ function Tasks() {
                 </button>
             </div>
         </div>
+
     )
 }
 
