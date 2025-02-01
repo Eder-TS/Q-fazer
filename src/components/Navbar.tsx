@@ -1,14 +1,11 @@
-// THEME
-import { useTheme } from '../contexts/ThemeContext'
-
 // COMPONENTS
 import { NavbarButton } from './NavbarButton'
 
-export const Navbar = () => {
+// TYPES
+import { NavbarProps } from '../types'
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { theme, toggleTheme } = useTheme()
-
+export function Navbar(props: NavbarProps) {
+    const { theme } = props
     const actualTab = window.document.location.href.endsWith('/')
 
 
@@ -21,6 +18,7 @@ export const Navbar = () => {
                 isActive={
                     actualTab ? 'active' : ''
                 }
+                theme={theme}
             />
 
             <NavbarButton
@@ -29,6 +27,7 @@ export const Navbar = () => {
                 isActive={
                     actualTab ? '' : 'active'
                 }
+                theme={theme}
             />
         </nav>
 

@@ -1,1 +1,2 @@
-export * from "./navbarButton";
+export * from './navbarButton';
+export * from './navbar';
