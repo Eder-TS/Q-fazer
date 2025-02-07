@@ -178,6 +178,7 @@ function Tasks() {
                     Alterar para o tema {theme === "dark" ? "claro." : "escuro."}
                 </button>
             </div>
+            <p>by Eder TS</p>
         </div>
 
     )
