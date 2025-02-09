@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 // THEME
 import { useTheme } from "../contexts/ThemeContext"
