@@ -169,11 +169,11 @@ input[type="text"] {
   display: block; /* Show the tooltip when hovering over the button */ 
 } 
 
-button:hover:disabled {
+.button-container:hover:disabled {
   cursor: not-allowed;
 }
 
-button {
+.button-container {
   padding: 10px 15px;
   background-color: #28a745;
   color: #fff;
@@ -182,7 +182,7 @@ button {
   cursor: pointer;
 }
 
-button:hover, .button:hover {
+.button-container:hover, .button:hover {
   background-color: #218838;
 }
 
@@ -190,12 +190,12 @@ button:hover, .button:hover {
   color: #fff;
 }
 
-.container.dark button {
+.container.dark .button-container {
   background-color: #444;
   color: #fff;
 }
 
-.container.dark button:hover {
+.container.dark .button-container:hover {
   background-color: #218838;
 }
 
@@ -225,18 +225,35 @@ input[type="checkbox"] {
   margin-right: 10px;
 }
 
-li button {
+.remove {
   background-color: #dc3545;
+  padding: 10px 15px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-li button:hover {
+.remove:hover {
   background-color: #c82333;
 }
 
-.container.dark li button {
+.selectable {
+  background: #fff;
+  flex-grow: 1;
+  margin-right: 10px;
+  border: none;
+}
+
+.selectable.dark {
+  background: #333;
+  color: #fff;
+}
+
+.container.dark .remove {
   background-color: #666;
 }
 
-.container.dark li button:hover {
+.container.dark .remove:hover {
   background-color: #c82333;
 }

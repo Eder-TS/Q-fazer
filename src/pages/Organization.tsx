@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 // THEME
 import { useTheme } from "../contexts/ThemeContext"
@@ -41,11 +41,6 @@ function Organization() {
             // Atualizando memória.
             setSelectedOrganization(newOrganizationItem.name)
         }
-    }
-
-    // Prepara o nome da organização selecionada
-    const selectOrganization = (event: { target: { value: SetStateAction<string> } }) => {
-        setSelectedOrganization(event.target.value)
     }
 
     const removeOrganization = (id: string): void => {
@@ -121,7 +116,7 @@ function Organization() {
 
                 <div className='input-container'>
                     <input type="text" value={newOrganization} onChange={(e) => setNewOrganization(e.target.value)} />
-                    <button onClick={addOrganization}>Adicionar organização</button>
+                    <button className='button-container' onClick={addOrganization}>Adicionar organização</button>
                 </div>
 
                 <ol>
@@ -131,22 +126,25 @@ function Organization() {
                                 <input
                                     type="radio"
                                     name='organization'
-                                    value={organization.name}
                                     checked={selectedOrganization === organization.name}
-                                    onChange={selectOrganization}
+                                    onChange={() => setSelectedOrganization(organization.name)}
                                 />
-
-                                <span style={{ textDecoration: organization.done ? 'line-through' : 'none' }}>
+                                <button
+                                    style={{ textDecoration: organization.done ? 'line-through' : 'none' }}
+                                    className={`selectable ${theme}`}
+                                    type='button'
+                                    onClick={() => setSelectedOrganization(organization.name)}
+                                >
                                     {organization.name}
-                                </span>
+                                </button>
 
-                                <button onClick={() => removeOrganization(organization.id)}>REMOVER</button>
+                                <button className='remove' onClick={() => removeOrganization(organization.id)}>REMOVER</button>
                             </li>
                         ))
                     }
                 </ol>
 
-                <button onClick={toggleTheme}>
+                <button className='button-container' onClick={toggleTheme}>
                     Alterar para o tema {theme === "dark" ? "claro." : "escuro."}
                 </button>
             </div>
