@@ -71,8 +71,9 @@ function Tasks() {
             return todo.done
         })
 
-
-
+        // Busca na memória de organizações a organização correspondente
+        // para marcar como concluída. Usa o else para desmarcar a organização
+        // caso alguma tarefa seja desmarcada e volte a ter tarefa pendente.
         const organizations = localStorage.getItem('organizations')
         const actualOrganizationMemory = organization
         if (areAllDone && organizations && actualOrganizationMemory) {
@@ -152,7 +153,7 @@ function Tasks() {
                 <div className='input-container'>
                     <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
                     <button
-                        className="tooltip"
+                        className='tooltip button-container'
                         onClick={addTask}
                         disabled={organization ? false : true}
                     >Adicionar tarefa</button>
@@ -164,17 +165,22 @@ function Tasks() {
                             <li key={todo.id}>
                                 <input type="checkbox" checked={todo.done} onChange={() => markTask(todo.id)} />
 
-                                <span style={{ textDecoration: todo.done ? 'line-through' : 'none' }}>
+                                <button
+                                    style={{ textDecoration: todo.done ? 'line-through' : 'none' }}
+                                    className={`selectable ${theme}`}
+                                    type='button'
+                                    onClick={() => markTask(todo.id)}
+                                >
                                     {todo.text}
-                                </span>
+                                </button>
 
-                                <button onClick={() => removeTask(todo.id)}>REMOVER</button>
+                                <button className='remove' onClick={() => removeTask(todo.id)}>REMOVER</button>
                             </li>
                         ))
                     }
                 </ol>
 
-                <button onClick={toggleTheme}>
+                <button className='button-container' onClick={toggleTheme}>
                     Alterar para o tema {theme === "dark" ? "claro." : "escuro."}
                 </button>
             </div>
